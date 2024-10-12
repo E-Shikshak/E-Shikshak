@@ -3,184 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Your website description here">
-    <title>Home Page</title>
-    <link rel="stylesheet" href="styles.css">
-<style type="text/css" id="dcoder_stylesheet">body, html {
+    <title>E-Shikshak Home</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the external CSS file -->
+<style type="text/css" id="dcoder_stylesheet">/* CSS Styles for Transparent Full-Page E-Shikshak Home */
+
+/* Set base styles for the entire body */
+body, html {
     margin: 0;
     padding: 0;
+    height: 100%;
+    width: 100%;
     font-family: Arial, sans-serif;
-    height: 100%;
-    /* Replace with the URL you copied */
-    background: url('https://c4.wallpaperflare.com/wallpaper/347/980/841/photography-landscape-nature-sunset-wallpaper-preview.jpg') no-repeat center center fixed;
-    background-size: cover; /* Ensure the image covers the entire background */
-}
-.container {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
 }
 
-.navbar {
+/* Use the uploaded image as the background for the entire page */
+body {
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9T5NRA-Rrh_FDdTA4nbr-Z-ctGU5ZVHaOOA&usqp=CAU') no-repeat center center fixed; /* Fixed background to cover the entire page */
+    background-size: cover; /* Ensure the image covers the entire background */
+    color: #ffffff; /* White text for good contrast */
+}
+
+/* Transparent Header */
+header {
     display: flex;
     justify-content: space-between;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.6);
+    align-items: center;
+    padding: 15px 30px;
+    background: rgba(0, 0, 0, 0.4); /* Semi-transparent header */
+    width: 100%; /* Full width */
+    color: #ffffff;
 }
 
-.navbar .logo {
-    font-size: 24px;
-    color: #fff;
+header .logo {
+    font-size: 28px;
+    font-weight: bold;
 }
 
-.navbar .nav-links {
+header nav ul {
     list-style: none;
     display: flex;
+    gap: 20px;
 }
 
-.navbar .nav-links li {
-    margin: 0 15px;
-}
-
-.navbar .nav-links a {
+header nav ul li a {
+    color: #ffffff;
     text-decoration: none;
-    color: #fff;
 }
 
-.navbar .search-box input {
-    padding: 5px;
-    border: none;
-    border-radius: 3px;
-}
-
-.main-content {
+/* Transparent Hero Section */
+.hero {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    height: 100%;
-    padding: 50px;
-    color: #fff;
+    height: 400px;
+    background: rgba(0, 0, 0, 0.4); /* Transparent background */
+    color: #ffffff;
+    text-align: center;
+    width: 100%;
 }
 
-.info-section {
-    max-width: 500px;
+.hero-content {
+    max-width: 800px;
+    padding: 20px;
 }
 
-.info-section h1 {
-    font-size: 48px;
-    margin: 0;
-}
-
-.info-section p {
-    margin: 10px 0;
-}
-
-.social-links a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.login-section {
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 40px;
+/* Transparent content sections */
+section {
+    padding: 60px 30px;
+    background: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+    color: #ffffff;
+    margin: 20px auto;
+    width: 80%;
     border-radius: 10px;
-    width: 300px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4); /* Soft shadow for visual depth */
 }
 
-.login-section h2 {
-    margin: 0 0 20px 0;
+section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 36px;
+    color: #FFD700; /* Gold color to highlight section headings */
 }
 
-.login-section label {
-    display: block;
-    margin: 10px 0 5px;
+section p {
+    text-align: center;
+    font-size: 20px;
 }
 
-.login-section input {
+/* Transparent Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.4); /* Transparent footer */
+    color: #ffffff;
     width: 100%;
-    padding: 10px;
-    margin: 5px 0;
-    border: none;
-    border-radius: 5px;
 }
 
-.login-section .options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.login-section .options a {
+footer a {
+    color: #FFD700; /* Gold color for links */
     text-decoration: none;
-    color: #ff4757;
 }
 
-.login-section button {
-    width: 100%;
-    padding: 10px;
-    margin: 20px 0;
-    border: none;
-    background-color: #ff4757;
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-}
+/* Responsive Design Adjustments */
+@media screen and (max-width: 768px) {
+    header, .hero, section, footer {
+        padding: 20px;
+        text-align: center;
+    }
 
-.login-section p a {
-    color: #ff4757;
-    text-decoration: none;
+    section {
+        width: 90%;
+    }
 }</style></head>
 <body>
-    <div class="container">
-        <!-- Navigation Bar -->
-        <nav class="navbar">
-            <div class="logo">E-SHIKSHAK</div>
-            <ul class="nav-links">
-                <li><a href="cource.html">Home</a></li>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">E-Shikshak</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
                 <li><a href="#">Contact</a></li>
+                <li><a href="#">cources</a></li>
             </ul>
-            <div class="search-box">
-                <input type="text" placeholder="Search...">
-            </div>
         </nav>
+    </header>
 
-        <!-- Main Content -->
-        <div class="main-content">
-            <!-- Website Information Section -->
-            <div class="info-section">
-                <h1>Welcome!</h1>
-                <p>To Our New Website.</p>
-                <p>Learn more about our services and offerings.</p>
-                <div class="social-links">
-                    <a href="#">LinkedIn</a> | 
-                    <a href="#">Facebook</a> | 
-                    <a href="#">Instagram</a>
-                </div>
-            </div>
-
-            <!-- Login Section -->
-            <div class="login-section">
-                <h2>Sign In</h2>
-                <form>
-                    <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="Enter your email">
-                    
-                    <label for="password">Password</label>
-                    <input type="password" id="password" placeholder="Enter your password">
-                    
-                    <div class="options">
-                        <input type="checkbox" id="remember-me">
-                        <label for="remember-me">Remember me</label>
-                        <a href="#">Forgot password?</a>
-                    </div>
-                    
-                    <button type="submit">Sign In</button>
-                    <p>Don’t have an account? <a href="#">Sign up</a></p>
-                </form>
-            </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 style="font-weight: 900;" style="font-size: xx-large;">Welcome to E-Shikshak</h1>
+            <p>Enhance your coding skills with our structured learning platform.</p>
         </div>
-    </div>
+    </section>
+
+    <!-- About E-Shikshak Section -->
+    <section class="about">
+        <h2>About E-Shikshak</h2>
+        <p>
+            E-Shikshak is a dedicated platform that aims to simplify coding education for students and professionals alike.
+            With our step-by-step tutorials and interactive learning resources, E-Shikshak offers a comprehensive approach
+            to learning coding from scratch or advancing your existing skills.
+        </p>
+    </section>
+
+    <!-- About Coding Section -->
+    <section class="coding">
+        <h2>Why Learn Coding?</h2>
+        <p>
+            Coding is an essential skill in today’s digital age. It allows you to create software, develop websites, and build
+            your own applications. Learning to code not only opens up a multitude of career opportunities but also enhances
+            problem-solving skills and logical thinking. E-Shikshak is here to guide you on your coding journey with well-structured
+            lessons, real-world projects, and practical examples.
+        </p>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Contact us at: <a href="mailto:support@eshikshak.com">support@eshikshak.com</a></p>
+        <p>Follow us on: 
+            <a href="#">Facebook</a> | 
+            <a href="#">Twitter</a> | 
+            <a href="#">LinkedIn</a>
+        </p>
+    </footer>
+    
+<footer>
+    <p>&copy; 2024 E-SHIKSHAK. All rights reserved.</p>
+</footer>
 
 </body></html>
