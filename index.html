@@ -1,175 +1,90 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Shikshak Home</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to the external CSS file -->
-<style type="text/css" id="dcoder_stylesheet">/* CSS Styles for Transparent Full-Page E-Shikshak Home */
-
-/* Set base styles for the entire body */
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    font-family: Arial, sans-serif;
-}
-
-/* Use the uploaded image as the background for the entire page */
-body {
-    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9T5NRA-Rrh_FDdTA4nbr-Z-ctGU5ZVHaOOA&usqp=CAU') no-repeat center center fixed; /* Fixed background to cover the entire page */
-    background-size: cover; /* Ensure the image covers the entire background */
-    color: #ffffff; /* White text for good contrast */
-}
-
-/* Transparent Header */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background: rgba(0, 0, 0, 0.4); /* Semi-transparent header */
-    width: 100%; /* Full width */
-    color: #ffffff;
-}
-
-header .logo {
-    font-size: 28px;
-    font-weight: bold;
-}
-
-header nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-header nav ul li a {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-/* Transparent Hero Section */
-.hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 400px;
-    background: rgba(0, 0, 0, 0.4); /* Transparent background */
-    color: #ffffff;
-    text-align: center;
-    width: 100%;
-}
-
-.hero-content {
-    max-width: 800px;
-    padding: 20px;
-}
-
-/* Transparent content sections */
-section {
-    padding: 60px 30px;
-    background: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
-    color: #ffffff;
-    margin: 20px auto;
-    width: 80%;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4); /* Soft shadow for visual depth */
-}
-
-section h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 36px;
-    color: #FFD700; /* Gold color to highlight section headings */
-}
-
-section p {
-    text-align: center;
-    font-size: 20px;
-}
-
-/* Transparent Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.4); /* Transparent footer */
-    color: #ffffff;
-    width: 100%;
-}
-
-footer a {
-    color: #FFD700; /* Gold color for links */
-    text-decoration: none;
-}
-
-/* Responsive Design Adjustments */
-@media screen and (max-width: 768px) {
-    header, .hero, section, footer {
-        padding: 20px;
-        text-align: center;
-    }
-
-    section {
-        width: 90%;
-    }
-}</style></head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Sign-In with Firebase</title>
+  <style>
+      body {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+          font-family: Arial, sans-serif;
+          background-color: #f0f0f0;
+      }
+      .container {
+          text-align: center;
+          padding: 2rem;
+          border-radius: 8px;
+          background-color: #fff;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      #googleSignInButton {
+          background-color: #4285f4;
+          color: white;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 4px;
+          font-size: 16px;
+          cursor: pointer;
+      }
+      #googleSignInButton:hover {
+          background-color: #357ae8;
+      }
+  </style>
+</head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <div class="logo">E-Shikshak</div>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="help.html">Help</a></li>
-                <li><a href="cource.html.html">cources</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1 style="font-weight: 900;" style="font-size: xx-large;">Welcome to E-Shikshak</h1>
-            <p>Enhance your coding skills with our structured learning platform.</p>
-        </div>
-    </section>
+<div class="container">
+  <h2>Welcome to God's Eye</h2>
+  <p>Sign in with Google to continue</p>
+  <button id="googleSignInButton">Sign in with Google</button>
+</div>
 
-    <!-- About E-Shikshak Section -->
-    <section class="about">
-        <h2>About E-Shikshak</h2>
-        <p>
-            E-Shikshak is a dedicated platform that aims to simplify coding education for students and professionals alike.
-            With our step-by-step tutorials and interactive learning resources, E-Shikshak offers a comprehensive approach
-            to learning coding from scratch or advancing your existing skills.
-        </p>
-    </section>
+<!-- Firebase Configuration and App Initialization -->
+<script type="module">
+  // Import Firebase modules
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+  import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
 
-    <!-- About Coding Section -->
-    <section class="coding">
-        <h2>Why Learn Coding?</h2>
-        <p>
-            Coding is an essential skill in today’s digital age. It allows you to create software, develop websites, and build
-            your own applications. Learning to code not only opens up a multitude of career opportunities but also enhances
-            problem-solving skills and logical thinking. E-Shikshak is here to guide you on your coding journey with well-structured
-            lessons, real-world projects, and practical examples.
-        </p>
-    </section>
+  // Firebase configuration (Replace this with your own config)
+  const firebaseConfig = {
+    apiKey: "AIzaSyCSw0_OhArbx-163wUJ-VnJ3vHmxD7TS90",
+    authDomain: "gods-eye-bd6e0.firebaseapp.com",
+    projectId: "gods-eye-bd6e0",
+    storageBucket: "gods-eye-bd6e0.appspot.com",
+    messagingSenderId: "708996587057",
+    appId: "1:708996587057:web:d62dc2db8deff10eea3f10",
+    measurementId: "G-0PVPFYSPYM"
+  };
 
-    <!-- Footer Section -->
-    <footer>
-        <p>Contact us at: <a href="mailto:support@eshikshak.com">support@eshikshak.com</a></p>
-        <p>Follow us on: 
-            <a href="#">Facebook</a> | 
-            <a href="#">Twitter</a> | 
-            <a href="#">LinkedIn</a>
-        </p>
-    </footer>
-    
-<footer>
-    <p>&copy; 2024 E-SHIKSHAK. All rights reserved.</p>
-</footer>
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
 
-</body></html>
+  // Set up Firebase Authentication
+  const auth = getAuth();
+  const provider = new GoogleAuthProvider();
+
+  // Function to handle Google Sign-In with popup
+  function signInWithGoogle() {
+      signInWithPopup(auth, provider)
+          .then((result) => {
+              const user = result.user;
+              console.log('User signed in:', user);
+              // Redirect to "Add Member" page or another page after login
+              window.location.href = "add_member.html";
+          })
+          .catch((error) => {
+              console.error('Error during sign-in:', error);
+              alert('Error: ' + error.message);
+          });
+  }
+
+  // Attach the sign-in function to the button
+  document.getElementById("googleSignInButton").addEventListener("click", signInWithGoogle);
+</script>
+
+</body>
+</html>
